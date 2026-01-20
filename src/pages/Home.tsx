@@ -49,13 +49,16 @@ const FeaturedProjects: React.FC = () => {
     )
 }
 
+import { SiteVisit } from '../components/home/SiteVisit';
+
 export const Home: React.FC = () => {
     return (
-        <>
+        <div className="bg-white">
             <Hero />
-            <Story />
             <Stats />
+            <Story />
             <FeaturedProjects />
-        </>
+            <SiteVisit />
+        </div>
     );
 };

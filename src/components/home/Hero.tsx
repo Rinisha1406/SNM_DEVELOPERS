@@ -25,19 +25,18 @@ export const Hero: React.FC = () => {
         <div className="relative h-screen w-full overflow-hidden">
             {/* Background Image Carousel */}
             {/* Background Image Carousel */}
-            <AnimatePresence initial={false}>
+            <div className="absolute inset-0 bg-forest-950"> {/* Fallback background color */}
                 <motion.div
                     key={currentImage}
-                    initial={{ opacity: 0, scale: 1.1 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 1.0, ease: "easeInOut" }}
+                    initial={{ scale: 1.1 }}
+                    animate={{ scale: 1 }}
+                    transition={{ duration: 5.0, ease: "linear" }}
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                     style={{
                         backgroundImage: `url("${heroImages[currentImage]}")`,
                     }}
                 />
-            </AnimatePresence>
+            </div>
 
             {/* Overlay - ensuring it stays on top of images */}
             <div className="absolute inset-0 bg-gradient-to-r from-forest-950/90 via-forest-900/70 to-forest-900/40 z-10" />

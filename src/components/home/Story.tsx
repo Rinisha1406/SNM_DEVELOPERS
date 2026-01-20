@@ -3,80 +3,71 @@ import { motion } from 'framer-motion';
 
 export const Story: React.FC = () => {
     return (
-        <section className="py-24 bg-forest-50">
+        <section className="py-24 bg-white">
             <div className="container mx-auto px-6">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div className="text-center mb-16">
+                    <span className="text-forest-600 font-bold tracking-wider uppercase text-sm">Our Roots</span>
+                    <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mt-2">
+                        The <span className="text-forest-700">Legacy</span> Behind SNM
+                    </h2>
+                    <div className="h-1 w-20 bg-gold-400 mx-auto mt-6 rounded-full"></div>
+                </div>
 
-                    {/* Text Content */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        <div className="mb-6">
-                            <span className="text-forest-600 font-bold tracking-wider uppercase text-sm">The SNM Story</span>
-                            <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mt-3 mb-6">
-                                A 36-Year Journey of <span className="text-forest-700">Permanent Trust</span>
-                            </h2>
-                        </div>
-
-                        <div className="space-y-6 text-gray-600 leading-relaxed">
-                            <p>
-                                Our story began with my grandfather’s vision in <span className="font-bold text-forest-800">1990</span>.
-                                He didn’t just want to sell land; he wanted to build a foundation for families in the Thanjavur-Trichy region.
-                                Today, as a third-generation business, we are carrying that legacy into a new digital era.
-                            </p>
-
-                            <div className="bg-white p-6 rounded-xl border-l-4 border-gold-500 shadow-sm my-8">
-                                <h3 className="text-xl font-bold text-gray-900 mb-2">Evidence of Growth</h3>
-                                <p className="italic text-gray-600 mb-4">"We turn raw land into a gold standard of investment."</p>
-                                <div className="flex items-center gap-8 text-sm">
-                                    <div>
-                                        <span className="block text-gray-400 uppercase text-xs">1990 Value</span>
-                                        <span className="block text-2xl font-bold text-gray-400 line-through">₹50 <span className="text-xs font-normal">/sq.ft</span></span>
-                                    </div>
-                                    <div className="h-10 w-px bg-gray-200"></div>
-                                    <div>
-                                        <span className="block text-forest-600 uppercase text-xs font-bold">Today's Value</span>
-                                        <span className="block text-3xl font-bold text-forest-700">₹3,500 <span className="text-xs font-normal text-gray-500">/sq.ft</span></span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <p>
-                                We are the #1 residential developers in our region. While we are modernizing as "SNM Developers,"
-                                our identity reflects the weight of three generations of honesty.
-                            </p>
-                        </div>
-                    </motion.div>
-
-                    {/* Visual/Image */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                        className="relative"
-                    >
-                        <div className="absolute -top-4 -left-4 w-24 h-24 bg-gold-400/20 rounded-full blur-xl"></div>
-                        <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                            {/* Placeholder for "Generational" image */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    {/* Left: Images/Collage */}
+                    <div className="lg:col-span-5 relative">
+                        {/* Main Portrait */}
+                        <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white z-10">
                             <img
-                                src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
-                                alt="Modern Building"
-                                className="w-full h-auto object-cover"
+                                src="https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" // Placeholder for Founder/Visionary
+                                alt="Founder"
+                                className="w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-700"
                             />
-                            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8">
-                                <p className="text-white font-serif text-lg">"Generations of Trust"</p>
+                            <div className="absolute bottom-0 left-0 right-0 bg-forest-900/90 text-center py-3">
+                                <p className="text-gold-400 font-bold tracking-wider uppercase text-xs">Mr. S.N. Muthu</p>
+                                <p className="text-white text-[10px] opacity-80">Founder (1990)</p>
                             </div>
                         </div>
-                        {/* Floating badge */}
-                        <div className="absolute -bottom-6 -right-6 bg-forest-700 text-white p-6 rounded-xl shadow-xl max-w-xs hidden md:block">
-                            <p className="text-3xl font-bold mb-1">3rd</p>
-                            <p className="text-sm opacity-90">Generation Family Business</p>
+
+                        {/* Secondary Image - Floating */}
+                        <div className="absolute -bottom-10 -right-10 w-2/3 rounded-xl overflow-hidden shadow-xl border-4 border-white hidden md:block z-20">
+                            <img
+                                src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" // Office/Team
+                                alt="Office"
+                                className="w-full h-full object-cover"
+                            />
                         </div>
-                    </motion.div>
+                        {/* Decorative Pattern */}
+                        <div className="absolute -top-10 -left-10 w-full h-full border-2 border-dashed border-gold-200 rounded-3xl -z-10"></div>
+                    </div>
+
+                    {/* Right: Text Content */}
+                    <div className="lg:col-span-7 lg:pl-12 space-y-8">
+                        <div>
+                            <h3 className="text-2xl font-bold text-gray-900 mb-4">"We don't just sell land; we build relationships."</h3>
+                            <p className="text-gray-600 leading-relaxed text-lg">
+                                This philosophy has been the cornerstone of SNM Developers since <span className="font-bold text-forest-800">1990</span>.
+                                Started by a visionary who believed that every family deserves a piece of earth to call their own, we have grown from a humble beginning to the region's most trusted real estate partner.
+                            </p>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="bg-forest-50 p-6 rounded-lg border-l-4 border-forest-600">
+                                <h4 className="font-bold text-forest-900 mb-2">3rd Generation</h4>
+                                <p className="text-sm text-gray-600">Carrying forward the torch of integrity and transparency into the modern era.</p>
+                            </div>
+                            <div className="bg-gold-50 p-6 rounded-lg border-l-4 border-gold-500">
+                                <h4 className="font-bold text-forest-900 mb-2">Region's #1</h4>
+                                <p className="text-sm text-gray-600">The most preferred developer for families in Thanjavur and Trichy.</p>
+                            </div>
+                        </div>
+
+                        <div className="pt-4">
+                            <button className="text-forest-700 font-bold border-b-2 border-gold-400 pb-1 hover:text-forest-900 hover:border-forest-900 transition-all">
+                                Read Our Full Story
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

@@ -1,41 +1,39 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Building2, Users, Trophy, Wallet } from 'lucide-react';
 
 const stats = [
-    { label: "Premium Layouts", value: "38+" },
-    { label: "Construction Projects", value: "120+" },
-    { label: "Families Served", value: "22,000+" },
-    { label: "Years of Legacy", value: "36" },
+    { label: "Construction Projects", value: "120+", icon: Building2 },
+    { label: "Families Served", value: "22,000+", icon: Users },
+    { label: "Years of Legacy", value: "36", icon: Trophy },
+    { label: "Land Appreciated", value: "70x", icon: Wallet },
 ];
 
 export const Stats: React.FC = () => {
     return (
-        <section className="py-20 bg-forest-900 text-white relative overflow-hidden">
-            {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
-
-            <div className="container mx-auto px-6 relative z-10">
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">The Scale of Trust</h2>
-                    <p className="text-forest-200 max-w-2xl mx-auto">
-                        Numbers that speak for themselves. Our impact in the region goes beyond meaningful development; it's about building communities.
-                    </p>
-                </div>
-
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-                    {stats.map((stat, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1, duration: 0.5 }}
-                            className="text-center p-6 border border-forest-800 rounded-lg bg-forest-900/50 backdrop-blur-sm hover:border-gold-500/50 transition-colors"
-                        >
-                            <h3 className="text-4xl md:text-5xl font-bold text-gold-400 mb-2">{stat.value}</h3>
-                            <p className="text-sm md:text-base text-gray-300 font-medium tracking-wide uppercase">{stat.label}</p>
-                        </motion.div>
-                    ))}
+        <section className="relative -mt-20 z-30 mb-20 px-6">
+            <div className="container mx-auto">
+                <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-gray-100">
+                        {stats.map((stat, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1, duration: 0.5 }}
+                                className={`text-center ${index % 2 !== 0 ? 'pl-4 md:pl-0' : ''}`} // Small adjustment for mobile grid gutters
+                            >
+                                <div className="flex flex-col items-center justify-center gap-3">
+                                    <div className="w-12 h-12 rounded-full bg-forest-50 flex items-center justify-center text-forest-600 mb-2">
+                                        <stat.icon size={24} />
+                                    </div>
+                                    <h3 className="text-3xl md:text-4xl font-bold text-forest-900">{stat.value}</h3>
+                                    <p className="text-xs md:text-sm text-gray-500 font-medium tracking-widest uppercase">{stat.label}</p>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>
