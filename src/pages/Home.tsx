@@ -5,7 +5,6 @@ import { FeaturedProjects } from '../components/home/FeaturedProjects';
 
 import { SiteVisit } from '../components/home/SiteVisit';
 import { PromoSection } from '../components/home/PromoSection';
-import { CTASection } from '../components/home/CTASection';
 
 export const Home: React.FC = () => {
     return (
@@ -15,7 +14,6 @@ export const Home: React.FC = () => {
             <FeaturedProjects />
             <SiteVisit />
             <PromoSection />
-            <CTASection />
         </div>
     );
 };

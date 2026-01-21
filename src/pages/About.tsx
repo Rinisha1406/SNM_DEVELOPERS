@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Eye, Target, Heart, Award, Users, TrendingUp, Shield, CheckCircle, Calendar } from 'lucide-react';
+import { PageHero } from '../components/layout/PageHero';
 
 export const About: React.FC = () => {
     const coreValues = [
@@ -92,36 +93,12 @@ export const About: React.FC = () => {
 
     return (
         <div className="bg-white">
-            {/* Hero Section */}
-            <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
-                <div
-                    className="absolute inset-0 bg-cover bg-center"
-                    style={{
-                        backgroundImage: 'url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80)'
-                    }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-forest-950/95 via-forest-900/85 to-forest-800/75" />
-
-                <div className="relative z-10 container mx-auto px-6 text-center text-white">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <div className="flex items-center justify-center gap-3 mb-6">
-                            <span className="h-0.5 w-12 bg-gold-500" />
-                            <span className="text-gold-400 font-medium tracking-[0.2em] uppercase text-sm">Since 1990</span>
-                            <span className="h-0.5 w-12 bg-gold-500" />
-                        </div>
-                        <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6">
-                            Our Legacy of Trust
-                        </h1>
-                        <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
-                            Building futures and creating wealth for over three decades. A third-generation enterprise committed to excellence.
-                        </p>
-                    </motion.div>
-                </div>
-            </section>
+            <PageHero
+                title="Our Legacy of Trust"
+                subtitle="Building futures and creating wealth for over three decades. A third-generation enterprise committed to excellence."
+                backgroundImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80"
+                decorationText="Since 1990"
+            />
 
             {/* About Us Section */}
             <section className="py-20 bg-white">

@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
+import { CTASection } from './components/home/CTASection';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Projects } from './pages/Projects';
@@ -38,6 +39,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
+      <CTASection />
       <Footer />
     </div>
   );
