@@ -5,7 +5,7 @@ interface LogoProps {
   color?: string; // Kept for compatibility but might not affect png
 }
 
-export const Logo: React.FC<LogoProps> = ({ className = "h-8 w-auto", color }) => {
+export const Logo: React.FC<LogoProps> = ({ className = "h-8 w-auto" }) => {
   return (
     <img
       src={logo}

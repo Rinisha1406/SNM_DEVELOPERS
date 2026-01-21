@@ -11,7 +11,7 @@ const stats = [
 
 export const Stats: React.FC = () => {
     return (
-        <section className="relative -mt-20 z-30 mb-20 px-6">
+        <section className="relative -mt-20 z-30 mb-8 px-6">
             <div className="container mx-auto">
                 <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-gray-100">

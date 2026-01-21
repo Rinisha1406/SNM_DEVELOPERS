@@ -23,19 +23,24 @@ export const Hero: React.FC = () => {
 
     return (
         <div className="relative h-screen w-full overflow-hidden">
-            {/* Background Image Carousel */}
-            {/* Background Image Carousel */}
-            <div className="absolute inset-0 bg-forest-950"> {/* Fallback background color */}
-                <motion.div
-                    key={currentImage}
-                    initial={{ scale: 1.1 }}
-                    animate={{ scale: 1 }}
-                    transition={{ duration: 5.0, ease: "linear" }}
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                    style={{
-                        backgroundImage: `url("${heroImages[currentImage]}")`,
-                    }}
-                />
+            {/* Background Image Carousel with Crossfade */}
+            <div className="absolute inset-0 bg-forest-950">
+                <AnimatePresence mode="sync">
+                    <motion.div
+                        key={currentImage}
+                        initial={{ opacity: 0, scale: 1.05 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{
+                            opacity: { duration: 1.2, ease: "easeInOut" },
+                            scale: { duration: 6, ease: "linear" }
+                        }}
+                        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                        style={{
+                            backgroundImage: `url("${heroImages[currentImage]}")`,
+                        }}
+                    />
+                </AnimatePresence>
             </div>
 
             {/* Overlay - ensuring it stays on top of images */}
