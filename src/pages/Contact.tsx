@@ -185,7 +185,7 @@ export const Contact: React.FC = () => {
             </div>
 
             {/* Office Locations */}
-            <section className="py-20 bg-gray-50 border-t border-gray-200">
+            <section className="pt-14 pb-16 bg-gray-50 border-t border-gray-200">
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-serif font-bold text-forest-900">Our Office Locations</h2>

@@ -3,86 +3,8 @@ import { motion } from 'framer-motion';
 import { MapPin, Home, Trees, Maximize, IndianRupee } from 'lucide-react';
 import { PageHero } from '../components/layout/PageHero';
 
-const projectsData = [
-    {
-        id: 1,
-        title: 'Green Valley',
-        location: 'Thanjavur',
-        type: 'Residential',
-        status: 'Sold Out',
-        image: '/images/project-1.jpg',
-        plotSize: '1200-2400 sq.ft',
-        priceRange: '₹25-45 Lakhs',
-        totalPlots: 120,
-        amenities: 12,
-        description: 'Premium gated community with modern amenities and lush green surroundings.'
-    },
-    {
-        id: 2,
-        title: 'Royal Enclave',
-        location: 'Trichy Road',
-        type: 'Villa Plots',
-        status: 'Open',
-        image: '/images/project-2.jpg',
-        plotSize: '2400-3600 sq.ft',
-        priceRange: '₹50-75 Lakhs',
-        totalPlots: 80,
-        amenities: 15,
-        description: 'Luxury villa plots with premium infrastructure and world-class amenities.'
-    },
-    {
-        id: 3,
-        title: 'Emerald City',
-        location: 'Medical College Road',
-        type: 'Residential',
-        status: 'Open',
-        image: '/images/project-3.jpg',
-        plotSize: '1000-2000 sq.ft',
-        priceRange: '₹20-40 Lakhs',
-        totalPlots: 150,
-        amenities: 10,
-        description: 'Affordable residential plots in prime location with excellent connectivity.'
-    },
-    {
-        id: 4,
-        title: 'Temple Town',
-        location: 'Kumbakonam',
-        type: 'Mixed Use',
-        status: 'Upcoming',
-        image: '/images/project-4.jpg',
-        plotSize: '1500-3000 sq.ft',
-        priceRange: '₹30-60 Lakhs',
-        totalPlots: 100,
-        amenities: 14,
-        description: 'Mixed-use development combining residential and commercial opportunities.'
-    },
-    {
-        id: 5,
-        title: 'Cauvery Gardens',
-        location: 'Thanjavur',
-        type: 'Residential',
-        status: 'Sold Out',
-        image: '/images/project-5.jpg',
-        plotSize: '1200-2200 sq.ft',
-        priceRange: '₹22-42 Lakhs',
-        totalPlots: 90,
-        amenities: 11,
-        description: 'Serene residential community near the Cauvery river with natural beauty.'
-    },
-    {
-        id: 6,
-        title: 'SNM Towers',
-        location: 'City Centre',
-        type: 'Commercial',
-        status: 'Completed',
-        image: '/images/project-6.jpg',
-        plotSize: '800-1500 sq.ft',
-        priceRange: '₹40-80 Lakhs',
-        totalPlots: 60,
-        amenities: 18,
-        description: 'Premium commercial spaces in the heart of the city with high footfall.'
-    }
-];
+import { useNavigate } from 'react-router-dom';
+import { projectsData } from '../data/projects';
 
 const testimonials = [
     {
@@ -130,6 +52,8 @@ const testimonials = [
 ];
 
 export const Projects: React.FC = () => {
+    const navigate = useNavigate();
+
     const [activeFilter, setActiveFilter] = useState('All');
     const [startIndex, setStartIndex] = useState(0);
 
@@ -137,9 +61,7 @@ export const Projects: React.FC = () => {
         setStartIndex((prev) => (prev + 1) % testimonials.length);
     };
 
-    const prevTestimonial = () => {
-        setStartIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-    };
+
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -283,6 +205,7 @@ export const Projects: React.FC = () => {
 
                                     {/* CTA Button */}
                                     <button
+                                        onClick={() => navigate(`/projects/${project.id}`)}
                                         className={`w-full py-3 rounded-xl font-bold transition-all ${project.status === 'Open'
                                             ? 'bg-forest-700 text-white hover:bg-forest-800 hover:shadow-lg'
                                             : 'bg-gray-200 text-gray-500 cursor-not-allowed'

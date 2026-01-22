@@ -63,36 +63,42 @@ const LeadershipSection = () => (
     </section>
 );
 
-const VideoSection = () => (
-    <section className="pt-14 pb-16 bg-forest-50 relative">
-        <div className="container mx-auto px-6 text-center">
-            <div className="mb-12">
-                <h2 className="text-4xl font-serif font-bold text-gray-900">Experience the Vibe</h2>
-                <p className="text-gray-600 mt-4">See what a day in the life looks like at our headquarters.</p>
-            </div>
-
-            <div className="relative max-w-4xl mx-auto aspect-video rounded-3xl overflow-hidden shadow-2xl group cursor-pointer">
-                <img
-                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"
-                    alt="Office Video Thumbnail"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/40 transition-colors">
-                    <div className="w-20 h-20 bg-white/20 backdrop-blur rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <Play className="text-white fill-white ml-1" size={32} />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-);
-
 const ValuesSection = () => (
-    <section className="pt-14 pb-16 bg-forest-900 text-white">
-        <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
-                <span className="text-gold-400 font-bold uppercase tracking-wider text-sm">Our Ethos</span>
-                <h2 className="text-4xl font-serif font-bold mt-2">Driven by Purpose, Guided by Principles</h2>
+    <section className="relative pt-14 pb-16 bg-forest-950 text-white overflow-hidden">
+        {/* Background Decorative Elements */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+            <div className="absolute -top-[20%] -left-[10%] w-[700px] h-[700px] bg-forest-900/30 rounded-full blur-3xl" />
+            <div className="absolute top-[40%] -right-[10%] w-[600px] h-[600px] bg-gold-600/10 rounded-full blur-3xl" />
+        </div>
+
+        <div className="container mx-auto px-6 relative z-10">
+            <div className="text-center mb-20">
+                <motion.span
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="inline-block py-1 px-3 rounded-full bg-forest-900 border border-forest-800 text-gold-400 font-bold uppercase tracking-wider text-xs mb-4"
+                >
+                    Our Ethos
+                </motion.span>
+                <motion.h2
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 }}
+                    className="text-4xl md:text-5xl font-serif font-bold text-white leading-tight"
+                >
+                    Driven by Purpose, <span className="text-gold-400">Guided by Principles</span>
+                </motion.h2>
+                <motion.p
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 }}
+                    className="mt-6 text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed"
+                >
+                    We believe that true success is built on a foundation of unshakeable values. These principles aren't just words on a wall—they are the compass that directs every decision we take.
+                </motion.p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
@@ -100,29 +106,40 @@ const ValuesSection = () => (
                     {
                         icon: Target,
                         title: "Purpose",
-                        desc: "To redefine urban living by creating sustainable, community-centric spaces that stand the test of time."
+                        desc: "To redefine urban living by creating sustainable, community-centric spaces that stand the test of time, enriching lives for generations."
                     },
                     {
                         icon: Scale,
-                        title: "Principles",
-                        desc: "Unwavering integrity in every deal. We believe in complete transparency and ethical business practices."
+                        title: "Principle",
+                        desc: "Transparency is our hallmark. We believe in ethical business practices, ensuring every transaction is clear, fair, and honest."
                     },
                     {
                         icon: Shield,
                         title: "Accountability",
-                        desc: "We take extreme ownership. Every team member is empowered to make decisions and is accountable for the results."
+                        desc: "We take full accountability for our work. Every team member is empowered to lead, make decisions, and deliver excellence without excuse."
                     }
                 ].map((item, i) => (
                     <motion.div
                         key={i}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.2 }}
                         whileHover={{ y: -10 }}
-                        className="bg-white/5 backdrop-blur border border-white/10 p-10 rounded-2xl text-center group"
+                        className="group relative bg-white/5 backdrop-blur-sm border border-white/10 p-10 rounded-3xl hover:bg-white/10 transition-all duration-500"
                     >
-                        <div className="w-16 h-16 bg-gradient-to-br from-gold-400 to-gold-600 rounded-full mx-auto flex items-center justify-center text-forest-950 mb-6 group-hover:scale-110 transition-transform">
-                            <item.icon size={32} />
+                        {/* Hover Gradient Border Effect */}
+                        <div className="absolute inset-0 rounded-3xl border border-gold-500/0 group-hover:border-gold-500/30 transition-colors duration-500 pointer-events-none" />
+
+                        <div className="w-20 h-20 bg-gradient-to-br from-forest-800 to-forest-900 rounded-2xl flex items-center justify-center text-gold-400 mb-8 group-hover:scale-110 group-hover:text-gold-300 transition-all duration-500 shadow-lg shadow-forest-950/20 border border-white/5">
+                            <item.icon size={36} strokeWidth={1.5} />
                         </div>
-                        <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
-                        <p className="text-forest-100/80 leading-relaxed">
+
+                        <h3 className="text-2xl font-serif font-bold text-white mb-4 group-hover:text-gold-100 transition-colors">
+                            {item.title}
+                        </h3>
+
+                        <p className="text-gray-400 leading-relaxed text-lg group-hover:text-gray-300 transition-colors">
                             {item.desc}
                         </p>
                     </motion.div>
@@ -133,47 +150,85 @@ const ValuesSection = () => (
 );
 
 const InfrastructureSection = () => (
-    <section className="pt-14 pb-16 bg-white overflow-hidden">
+    <section className="pt-10 pb-10 bg-white overflow-hidden relative">
         <div className="container mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-20 items-center">
+                {/* Text Content */}
                 <div className="order-2 lg:order-1">
-                    <div className="relative">
-                        <div className="absolute -top-10 -left-10 w-40 h-40 bg-gold-100 rounded-full blur-3xl opacity-50" />
-                        <h2 className="text-4xl font-serif font-bold text-gray-900 mb-6 relative z-10">
+                    <motion.div
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                    >
+                        <span className="text-forest-600 font-bold uppercase tracking-wider text-sm mb-4 block">
+                            Work Environment
+                        </span>
+                        <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6 leading-tight">
                             State-of-the-Art <br />
-                            <span className="text-forest-700">Infrastructure</span>
+                            <span className="text-forest-800">Infrastructure</span>
                         </h2>
-                    </div>
-                    <p className="text-gray-600 text-lg mb-8 leading-relaxed">
-                        Work in an environment designed for productivity and comfort. Our headquarters features modern amenities, ergonomic workspaces, and cutting-edge technology to ensure you have everything you need to succeed.
-                    </p>
-                    <ul className="space-y-4">
+                        <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-xl">
+                            We believe that your workspace shapes your mindset. Our headquarters is designed to foster creativity, collaboration, and focus—combining modern amenities with ergonomic comfort.
+                        </p>
+                    </motion.div>
+
+                    <ul className="space-y-6">
                         {[
-                            "Ergonomic workstations with Herman Miller chairs",
-                            "High-speed fiber connectivity & cloud-based tools",
-                            "Collaborative zones and quiet pods",
-                            "Fully stocked pantry and recreational area"
+                            { text: "Ergonomic workstations with Herman Miller chairs", icon: Monitor },
+                            { text: "High-speed fiber connectivity & cloud-based tools", icon: Zap },
+                            { text: "Collaborative zones and quiet focus pods", icon: Users },
+                            { text: "Premium pantry and recreational areas", icon: Coffee }
                         ].map((item, i) => (
-                            <li key={i} className="flex items-center gap-3 text-gray-700 font-medium">
-                                <span className="p-1 rounded-full bg-green-100 text-green-600"><Monitor size={16} /></span>
-                                {item}
-                            </li>
+                            <motion.li
+                                key={i}
+                                initial={{ opacity: 0, y: 10 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1 }}
+                                className="flex items-center gap-4 group"
+                            >
+                                <div className="w-12 h-12 rounded-xl bg-forest-50 text-forest-700 flex items-center justify-center group-hover:bg-forest-600 group-hover:text-white transition-colors duration-300">
+                                    <item.icon size={20} strokeWidth={2} />
+                                </div>
+                                <span className="text-gray-700 font-medium text-lg">{item.text}</span>
+                            </motion.li>
                         ))}
                     </ul>
                 </div>
-                <div className="order-1 lg:order-2 relative">
-                    <div className="grid grid-cols-2 gap-4">
+
+                {/* Images */}
+                <div className="order-1 lg:order-2 relative lg:h-[600px] flex items-center">
+                    {/* Background Blob */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gold-100/50 rounded-full blur-3xl -z-10" />
+
+                    {/* Main Image */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        className="relative z-10 w-4/5 ml-auto"
+                    >
                         <img
-                            src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=600&q=80"
-                            className="rounded-2xl shadow-lg mt-8"
-                            alt="Office Space"
+                            src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80"
+                            className="rounded-3xl shadow-2xl border-4 border-white"
+                            alt="Modern Office"
                         />
+                    </motion.div>
+
+                    {/* Secondary Image */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -50, y: 50 }}
+                        whileInView={{ opacity: 1, x: 0, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 }}
+                        className="absolute bottom-10 left-0 w-3/5 z-20"
+                    >
                         <img
                             src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?auto=format&fit=crop&w=600&q=80"
-                            className="rounded-2xl shadow-lg"
+                            className="rounded-3xl shadow-2xl border-4 border-white"
                             alt="Tech Setup"
                         />
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </div>
@@ -458,7 +513,6 @@ export const Careers: React.FC = () => {
                 decorationText="Join Our Family"
             />
             <LeadershipSection />
-            <VideoSection />
             <ValuesSection />
             <InfrastructureSection />
             <CultureSection />

@@ -11,6 +11,7 @@ import { Careers } from './pages/Careers';
 import { Blogs } from './pages/Blogs';
 import { News } from './pages/News';
 import { Contact } from './pages/Contact';
+import { ProjectDetails } from './pages/ProjectDetails';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -37,6 +38,7 @@ function App() {
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/news" element={<News />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/projects/:id" element={<ProjectDetails />} />
         </Routes>
       </main>
       <CTASection />
