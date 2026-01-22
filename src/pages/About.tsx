@@ -114,7 +114,7 @@ export const About: React.FC = () => {
                                 <img
                                     src="/images/brand.png"
                                     alt="Modern Real Estate"
-                                    className="rounded-2xl shadow-2xl"
+                                    className="rounded-2xl shadow-2xl w-full h-[700px] object-cover"
                                 />
                                 <div className="absolute -bottom-6 -right-6 bg-gold-500 text-forest-950 p-8 rounded-xl shadow-xl">
                                     <div className="text-4xl font-bold">34+</div>
