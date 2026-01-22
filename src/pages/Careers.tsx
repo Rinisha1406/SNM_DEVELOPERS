@@ -22,36 +22,41 @@ import {
 import { PageHero } from '../components/layout/PageHero';
 
 // --- Components ---
-
-
-
 const LeadershipSection = () => (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gradient-to-b from-white to-forest-50/40">
         <div className="container mx-auto px-6">
-            <div className="flex flex-col md:flex-row items-center gap-12">
-                <div className="w-full md:w-1/2">
-                    <img
-                        src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=80"
-                        alt="Leadership"
-                        className="rounded-2xl shadow-2xl"
-                    />
-                </div>
-                <div className="w-full md:w-1/2">
-                    <span className="text-forest-600 font-bold uppercase tracking-wider text-sm">Mentorship</span>
-                    <h2 className="text-4xl font-serif font-bold text-gray-900 mt-2 mb-6">Learn from the Masters</h2>
-                    <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                        At SNM, you don't just work; you learn. Our leadership team comprises industry veterans with decades of experience in real estate, law, and urban planning. We believe in passing the torch and grooming the next generation of leaders.
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+                {/* Text Content */}
+                <div>
+                    <span className="inline-block mb-4 text-forest-600 font-semibold uppercase tracking-wider text-sm">
+                        Leadership & Mentorship
+                    </span>
+
+                    <h2 className="text-4xl lg:text-5xl font-serif font-bold text-gray-900 leading-tight mb-6">
+                        Guided by Experience,<br className="hidden sm:block" /> Driven by Vision
+                    </h2>
+
+                    <p className="text-lg text-gray-600 leading-relaxed mb-8 max-w-xl">
+                        At SNM Developers, leadership means responsibility. Our founders and senior mentors bring decades
+                        of expertise in real estate development, legal compliance, and urban planning — ensuring every
+                        decision is made with integrity and foresight.
                     </p>
-                    <div className="flex items-center gap-4">
-                        <div className="flex -space-x-4">
-                            {[1, 2, 3].map((i) => (
-                                <div key={i} className="w-12 h-12 rounded-full border-2 border-white bg-gray-200 overflow-hidden">
-                                    <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="Leader" />
-                                </div>
-                            ))}
-                        </div>
-                        <span className="text-sm font-bold text-gray-900">Direct Access to Leadership</span>
+
+                    {/* Floating badge */}
+                    <div className=''>
+                        <p className="text-sm font-bold text-gray-900">36+ Years of Industry Leadership</p>
+                        <p className="text-xs text-gray-500">Built on trust & expertise</p>
                     </div>
+                </div>
+
+                {/* Image */}
+                <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+                    <img
+                        src="/images/brand-1.png"
+                        alt="SNM Leadership"
+                        className="w-full h-full object-cover object-top"
+                    />
                 </div>
             </div>
         </div>
@@ -59,7 +64,7 @@ const LeadershipSection = () => (
 );
 
 const VideoSection = () => (
-    <section className="py-24 bg-forest-50 relative">
+    <section className="pt-14 pb-16 bg-forest-50 relative">
         <div className="container mx-auto px-6 text-center">
             <div className="mb-12">
                 <h2 className="text-4xl font-serif font-bold text-gray-900">Experience the Vibe</h2>
@@ -83,7 +88,7 @@ const VideoSection = () => (
 );
 
 const ValuesSection = () => (
-    <section className="py-24 bg-forest-900 text-white">
+    <section className="pt-14 pb-16 bg-forest-900 text-white">
         <div className="container mx-auto px-6">
             <div className="text-center mb-16">
                 <span className="text-gold-400 font-bold uppercase tracking-wider text-sm">Our Ethos</span>
@@ -128,7 +133,7 @@ const ValuesSection = () => (
 );
 
 const InfrastructureSection = () => (
-    <section className="py-24 bg-white overflow-hidden">
+    <section className="pt-14 pb-16 bg-white overflow-hidden">
         <div className="container mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
                 <div className="order-2 lg:order-1">
@@ -194,7 +199,7 @@ const ValueCard = ({ icon: Icon, title, desc, delay }: any) => (
 );
 
 const CultureSection = () => (
-    <section className="py-24 bg-gray-50 relative overflow-hidden">
+    <section className="pt-14 pb-16 bg-gray-50 relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
             <div className="text-center mb-16">
                 <span className="text-gold-600 font-bold uppercase tracking-wider text-sm">Why Choose SNM</span>
@@ -232,7 +237,7 @@ const CultureSection = () => (
 );
 
 const Testimonials = () => (
-    <section className="py-24 bg-forest-900 text-white relative isolate overflow-hidden">
+    <section className="pt-14 pb-16 bg-forest-900 text-white relative isolate overflow-hidden">
         {/* Decorative background */}
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.forest.800),theme(colors.forest.950))] opacity-50" />
 
@@ -287,7 +292,7 @@ const Testimonials = () => (
 );
 
 const Gallery = () => (
-    <section className="py-24 bg-white">
+    <section className="pt-14 pb-16 bg-white">
         <div className="container mx-auto px-6">
             <div className="flex flex-col md:flex-row justify-between items-end mb-12">
                 <div>
@@ -313,15 +318,15 @@ const Gallery = () => (
                 </div>
                 <div className="relative group overflow-hidden rounded-2xl">
                     <img
-                        src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=400&q=80"
-                        alt="Celebration"
+                        src="/images/brand-cap.png"
+                        alt="Employee Swag"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                 </div>
                 <div className="relative group overflow-hidden rounded-2xl">
                     <img
-                        src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=400&q=80"
-                        alt="Office"
+                        src="/images/brand-id-card.png"
+                        alt="Identity"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                 </div>
@@ -393,7 +398,7 @@ const JobSection = () => {
         : jobs.filter(job => job.dept === activeFilter);
 
     return (
-        <section className="py-24 bg-gray-50" id="openings">
+        <section className="pt-14 pb-16 bg-gray-50" id="openings">
             <div className="container mx-auto px-6 max-w-5xl">
                 <div className="text-center mb-12">
                     <span className="text-forest-600 font-bold uppercase tracking-wider text-sm">Join the Team</span>

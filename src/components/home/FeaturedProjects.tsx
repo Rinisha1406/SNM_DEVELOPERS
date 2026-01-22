@@ -22,7 +22,7 @@ const projects: Project[] = [
         location: "Thanjavur",
         type: "Residential Layout",
         status: "Ongoing",
-        image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        image: "/images/project-1.jpg",
         totalPlots: 120,
         sizeRange: "1200 - 2400 sq.ft"
     },
@@ -32,7 +32,7 @@ const projects: Project[] = [
         location: "Kumbakonam",
         type: "Premium Villas",
         status: "Completed",
-        image: "https://images.unsplash.com/photo-1600047509807-c17181af3abd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        image: "/images/project-2.jpg",
         totalPlots: 45,
         sizeRange: "1800 - 3200 sq.ft"
     },
@@ -42,7 +42,7 @@ const projects: Project[] = [
         location: "Trichy",
         type: "Gated Community",
         status: "Upcoming",
-        image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        image: "/images/project-3.jpg",
         totalPlots: 200,
         sizeRange: "600 - 1500 sq.ft"
     },
@@ -52,7 +52,7 @@ const projects: Project[] = [
         location: "Thanjavur",
         type: "Residential Layout",
         status: "Ongoing",
-        image: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        image: "/images/project-4.jpg",
         totalPlots: 85,
         sizeRange: "1000 - 1800 sq.ft"
     },
@@ -62,7 +62,7 @@ const projects: Project[] = [
         location: "Trichy",
         type: "Premium Plots",
         status: "Upcoming",
-        image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        image: "/images/project-5.jpg",
         totalPlots: 150,
         sizeRange: "800 - 2000 sq.ft"
     },
@@ -72,7 +72,7 @@ const projects: Project[] = [
         location: "Kumbakonam",
         type: "Villa Plots",
         status: "Completed",
-        image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        image: "/images/project-6.jpg",
         totalPlots: 60,
         sizeRange: "1500 - 3000 sq.ft"
     }

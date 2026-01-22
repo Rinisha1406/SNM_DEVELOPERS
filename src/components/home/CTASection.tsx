@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export const CTASection: React.FC = () => {
     return (
-        <section className="bg-forest-900 py-20 relative overflow-hidden">
+        <section className="bg-forest-900 pt-14 pb-16 relative overflow-hidden">
             {/* Background elements */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-forest-800 rounded-full blur-3xl opacity-20 -mr-20 -mt-20 pointer-events-none"></div>
             <div className="absolute bottom-0 left-0 w-72 h-72 bg-gold-600 rounded-full blur-3xl opacity-10 -ml-10 -mb-10 pointer-events-none"></div>

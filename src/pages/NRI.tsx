@@ -75,7 +75,7 @@ const ProcessStep = ({ number, title, desc, icon: Icon, isLast }: { number: stri
 );
 
 const RemoteProcess = () => (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="pt-14 pb-16 bg-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-gray-50 -skew-x-12 translate-x-32 z-0" />
         <div className="container mx-auto px-6 relative z-10">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -156,7 +156,7 @@ const RemoteProcess = () => (
 );
 
 const CulturalSection = () => (
-    <section className="py-24 bg-forest-900 relative overflow-hidden text-white">
+    <section className="pt-14 pb-16 bg-forest-900 relative overflow-hidden text-white">
         <div className="absolute inset-0 opacity-10" style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }} />
@@ -198,7 +198,7 @@ const CulturalSection = () => (
 );
 
 const ChartSection = () => (
-    <section className="py-24 bg-gray-50">
+    <section className="pt-14 pb-16 bg-gray-50">
         <div className="container mx-auto px-6">
             <div className="text-center mb-16">
                 <span className="text-forest-600 font-bold uppercase tracking-wider text-sm">Financial Wisdom</span>
@@ -323,7 +323,7 @@ const FAQSection = () => {
     ];
 
     return (
-        <section className="py-24 bg-white">
+        <section className="pt-14 pb-16 bg-white">
             <div className="container mx-auto px-6 max-w-4xl">
                 <div className="text-center mb-12">
                     <h2 className="text-4xl font-serif font-bold text-gray-900">Common Queries</h2>
@@ -396,7 +396,7 @@ const GlobalMap = () => (
 );
 
 const IncomeHighlights = () => (
-    <section className="py-20 bg-white">
+    <section className="pt-14 pb-16 bg-white">
         <div className="container mx-auto px-6">
             <div className="text-center mb-16">
                 <span className="text-forest-600 font-bold uppercase tracking-wider text-sm">Why Invest Now?</span>
@@ -426,44 +426,50 @@ const IncomeHighlights = () => (
     </section>
 );
 
-const VideoTestimonials = () => (
-    <section className="py-24 bg-orange-50/50">
-        <div className="container mx-auto px-6">
-            <div className="text-center mb-12">
-                <h2 className="text-4xl font-serif font-bold text-gray-900">Hear From Our Global Family</h2>
+const TestimonialCard = ({ data, active = false }: any) => (
+    <div className={`bg-white rounded-2xl p-${active ? '10' : '8'} shadow-sm text-center border border-gray-100`}>
+        <div className="flex flex-col items-center">
+            <div className={`w-${active ? '20' : '16'} h-${active ? '20' : '16'} rounded-full overflow-hidden mb-4 ring-4 ring-orange-50`}>
+                <img src={data.image} alt={data.name} className="w-full h-full object-cover" />
             </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-                {[
-                    { name: "Dr. Ravi Shankar", loc: "Dallas, USA", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" },
-                    { name: "Mrs. Priya Menon", loc: "Dubai, UAE", img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80" },
-                    { name: "Mr. James Thomas", loc: "London, UK", img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80" }
-                ].map((testimonial, i) => (
-                    <motion.div
-                        key={i}
-                        className="relative group cursor-pointer overflow-hidden rounded-2xl shadow-lg aspect-video"
-                        whileHover={{ scale: 1.02 }}
-                    >
-                        <img src={testimonial.img} alt={testimonial.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors flex items-center justify-center">
-                            <div className="w-16 h-16 bg-white/20 backdrop-blur rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                                <Play className="fill-white text-white ml-1" size={32} />
-                            </div>
-                        </div>
-                        <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
-                            <h4 className="text-white font-bold text-lg">{testimonial.name}</h4>
-                            <p className="text-gray-300 text-sm">{testimonial.loc}</p>
-                        </div>
-                    </motion.div>
-                ))}
-            </div>
+            <h4 className={`${active ? 'text-xl' : 'text-lg'} font-bold text-gray-900`}>
+                {data.name}
+            </h4>
+            <p className="text-xs text-orange-500 uppercase tracking-wider mb-4">
+                {data.project}
+            </p>
+            <p className={`${active ? 'text-gray-600' : 'text-gray-400'} text-sm leading-relaxed line-clamp-3`}>
+                {data.quote}
+            </p>
         </div>
-    </section>
+    </div>
 );
 
-// --- Main Page Component ---
 
 export const NRI: React.FC = () => {
+    const [startIndex, setStartIndex] = useState(0);
+
+    const testimonials = [
+        {
+            name: "Ravi Kumar",
+            project: "SNM Green Valley",
+            quote: "Even while living abroad, the entire land purchase process was smooth and transparent.",
+            image: "https://randomuser.me/api/portraits/men/32.jpg",
+        },
+        {
+            name: "Priya Narayanan",
+            project: "SNM Heritage Layout",
+            quote: "Clear documentation and constant updates gave us full confidence investing back home.",
+            image: "https://randomuser.me/api/portraits/women/44.jpg",
+        },
+        {
+            name: "Suresh Iyer",
+            project: "SNM Prime Enclave",
+            quote: "Professional handling from virtual tour to registration. Highly recommended.",
+            image: "https://randomuser.me/api/portraits/men/65.jpg",
+        },
+    ];
+
     return (
         <div className="min-h-screen bg-white">
             <PageHero
@@ -478,7 +484,68 @@ export const NRI: React.FC = () => {
             <CulturalSection />
             <ChartSection />
             <IncomeHighlights />
-            <VideoTestimonials />
+            {/*TESTIMONIALS HERE */}
+            <section className="py-6 bg-orange-50/30 overflow-hidden relative">
+                <div className="container mx-auto px-6 relative z-10">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-center mb-12"
+                    >
+                        <span className="text-forest-600 font-semibold text-sm uppercase tracking-wider">
+                            Success Stories
+                        </span>
+                        <h2 className="text-4xl font-serif font-bold text-gray-900 mt-3">
+                            Stories That Inspire Confidence
+                        </h2>
+                    </motion.div>
+                </div>
+
+                <div className="relative max-w-7xl mx-auto">
+                    <div className="flex-grow overflow-hidden py-10">
+                        <motion.div className="flex justify-center items-center gap-6">
+
+                            {/* Previous */}
+                            <div className="hidden md:block w-1/3 opacity-40 scale-90 blur-[1px]">
+                                <TestimonialCard
+                                    data={testimonials[(startIndex - 1 + testimonials.length) % testimonials.length]}
+                                />
+                            </div>
+
+                            {/* Active */}
+                            <div className="w-full md:w-1/3 scale-110 z-20">
+                                <TestimonialCard
+                                    data={testimonials[startIndex]}
+                                    active
+                                />
+                            </div>
+
+                            {/* Next */}
+                            <div className="hidden md:block w-1/3 opacity-40 scale-90 blur-[1px]">
+                                <TestimonialCard
+                                    data={testimonials[(startIndex + 1) % testimonials.length]}
+                                />
+                            </div>
+
+                        </motion.div>
+                    </div>
+
+                    {/* Pagination */}
+                    <div className="flex justify-center gap-2 mt-8">
+                        {testimonials.map((_, index) => (
+                            <button
+                                key={index}
+                                onClick={() => setStartIndex(index)}
+                                className={`h-2 rounded-full transition-all duration-300 ${index === startIndex
+                                    ? 'w-6 bg-gray-800'
+                                    : 'w-2 bg-gray-300 hover:bg-gray-400'
+                                    }`}
+                            />
+                        ))}
+                    </div>
+                </div>
+            </section>
             <FAQSection />
 
         </div>

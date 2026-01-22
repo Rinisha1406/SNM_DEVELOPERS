@@ -209,11 +209,11 @@ export const News: React.FC = () => {
             <PageHero
                 title="Event Highlights"
                 subtitle="Catch up on the latest launches, celebrations, and special moments from the SNM family."
-                backgroundImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80"
+                backgroundImage="/images/news-hero.png"
                 decorationText="Press & Media"
             />
 
-            <section className="py-20 bg-gray-50 min-h-[800px]">
+            <section className="pt-14 pb-16 bg-gray-50 min-h-[800px]">
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-16">
                         <h2 className="text-sm font-bold text-gold-600 uppercase tracking-[0.2em] mb-3">Official Announcements</h2>
@@ -259,11 +259,11 @@ export const News: React.FC = () => {
                     </AnimatePresence>
 
                     {/* Load More (Visual) */}
-                    <div className="mt-20 text-center">
+                    {/* <div className="mt-20 text-center">
                         <button className="px-8 py-3 border border-gray-300 text-gray-500 rounded-lg hover:border-forest-600 hover:text-forest-600 transition-colors font-medium">
                             View All Archives
                         </button>
-                    </div>
+                    </div> */}
                 </div>
             </section>
         </div>

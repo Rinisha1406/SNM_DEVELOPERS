@@ -67,7 +67,7 @@ export const About: React.FC = () => {
         { number: '34+', label: 'Years of Trust' },
         { number: '38+', label: 'Layouts Developed' },
         { number: '120+', label: 'Projects Completed' },
-        { number: '22,000+', label: 'Families Served' }
+        { number: '22K+', label: 'Families Served' }
     ];
 
     const team = [
@@ -101,7 +101,7 @@ export const About: React.FC = () => {
             />
 
             {/* About Us Section */}
-            <section className="py-20 bg-white">
+            <section className="pt-14 pb-16 bg-white">
                 <div className="container mx-auto px-6">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <motion.div
@@ -112,7 +112,7 @@ export const About: React.FC = () => {
                         >
                             <div className="relative">
                                 <img
-                                    src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80"
+                                    src="/images/brand.png"
                                     alt="Modern Real Estate"
                                     className="rounded-2xl shadow-2xl"
                                 />
@@ -165,7 +165,7 @@ export const About: React.FC = () => {
             </section>
 
             {/* Core Values Section */}
-            <section className="py-20 bg-gray-50">
+            <section className="pt-14 pb-16 bg-gray-50">
                 <div className="container mx-auto px-6">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -205,7 +205,7 @@ export const About: React.FC = () => {
             </section>
 
             {/* Why Work With Us */}
-            <section className="py-20 bg-white">
+            <section className="pt-14 pb-16 bg-white">
                 <div className="container mx-auto px-6">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -245,7 +245,7 @@ export const About: React.FC = () => {
             </section>
 
             {/* Leadership Team */}
-            <section className="py-20 bg-gradient-to-br from-forest-950 to-forest-900 text-white">
+            <section className="pt-14 pb-16 bg-gradient-to-br from-forest-950 to-forest-900 text-white">
                 <div className="container mx-auto px-6">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -296,7 +296,7 @@ export const About: React.FC = () => {
             </section>
 
             {/* Journey Timeline */}
-            <section className="py-20 bg-white">
+            <section className="pt-14 pb-16 bg-white">
                 <div className="container mx-auto px-6">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -348,82 +348,114 @@ export const About: React.FC = () => {
             </section>
 
             {/* Statistics Section */}
-            <section className="py-20 bg-gradient-to-br from-forest-900 to-forest-950 text-white">
+            <section className="pt-14 pb-16 bg-forest-950 text-white">
                 <div className="container mx-auto px-6">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                        {stats.map((stat, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, scale: 0.8 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                className="text-center"
-                            >
-                                <div className="text-5xl md:text-6xl font-bold text-gold-400 mb-3">
-                                    {stat.number}
-                                </div>
-                                <div className="text-gray-300 text-lg">
-                                    {stat.label}
-                                </div>
-                            </motion.div>
-                        ))}
+                    <div className="max-w-6xl mx-auto">
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-16 gap-x-10">
+                            {stats.map((stat, index) => (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 40 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.1 }}
+                                    className="text-left"
+                                >
+                                    {/* Index */}
+                                    <div className="text-sm text-gold-400 tracking-widest mb-4">
+                                        0{index + 1}
+                                    </div>
+
+                                    {/* Number */}
+                                    <div className="text-6xl md:text-7xl font-serif font-bold leading-none text-white mb-6">
+                                        {stat.number}
+                                    </div>
+
+                                    {/* Divider */}
+                                    <div className="w-12 h-px bg-white/30 mb-6" />
+
+                                    {/* Label */}
+                                    <div className="text-gray-400 text-lg leading-relaxed max-w-xs">
+                                        {stat.label}
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>
 
             {/* Team Culture / Purpose */}
-            <section className="py-20 bg-white">
+            <section className="pt-14 pb-16 bg-gradient-to-b from-white to-gray-50">
                 <div className="container mx-auto px-6">
-                    <div className="max-w-4xl mx-auto text-center">
+                    <div className="max-w-6xl mx-auto">
+
+                        {/* Heading */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
+                            className="text-center mb-20"
                         >
-                            <h2 className="text-4xl font-serif font-bold text-gray-900 mb-6">
-                                Doing Good with Purpose
+                            <span className="text-gold-500 text-sm uppercase tracking-widest font-medium">
+                                Our Culture
+                            </span>
+                            <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mt-4 mb-6">
+                                Building with Purpose
                             </h2>
-                            <p className="text-xl text-gray-600 leading-relaxed mb-12">
-                                At SNM Developers, we believe in creating more than just properties. We build communities, create opportunities, and contribute to the growth of our region. Every project is a step towards a better future for all.
+                            <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+                                At SNM Developers, we don’t just create properties. We shape communities,
+                                empower people, and contribute to long-term regional growth.
                             </p>
-
-                            <div className="grid md:grid-cols-3 gap-6 mt-12">
-                                <div className="relative h-64 rounded-xl overflow-hidden group">
-                                    <img
-                                        src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80"
-                                        alt="Team collaboration"
-                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-forest-950/80 to-transparent" />
-                                    <div className="absolute bottom-4 left-4 right-4 text-white">
-                                        <h3 className="font-bold text-lg">Collaboration</h3>
-                                    </div>
-                                </div>
-                                <div className="relative h-64 rounded-xl overflow-hidden group">
-                                    <img
-                                        src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=80"
-                                        alt="Innovation"
-                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-forest-950/80 to-transparent" />
-                                    <div className="absolute bottom-4 left-4 right-4 text-white">
-                                        <h3 className="font-bold text-lg">Innovation</h3>
-                                    </div>
-                                </div>
-                                <div className="relative h-64 rounded-xl overflow-hidden group">
-                                    <img
-                                        src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80"
-                                        alt="Excellence"
-                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-forest-950/80 to-transparent" />
-                                    <div className="absolute bottom-4 left-4 right-4 text-white">
-                                        <h3 className="font-bold text-lg">Excellence</h3>
-                                    </div>
-                                </div>
-                            </div>
                         </motion.div>
+
+                        {/* Image Cards */}
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                            {[
+                                {
+                                    title: "Collaboration",
+                                    image:
+                                        "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=900&q=80",
+                                },
+                                {
+                                    title: "Innovation",
+                                    image:
+                                        "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=80",
+                                },
+                                {
+                                    title: "Excellence",
+                                    image:
+                                        "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80",
+                                },
+                            ].map((item, index) => (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 40 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.15 }}
+                                    className="group relative h-[420px] rounded-2xl overflow-hidden shadow-xl"
+                                >
+                                    <img
+                                        src={item.image}
+                                        alt={item.title}
+                                        className="absolute inset-0 w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-700"
+                                    />
+
+                                    {/* Overlay */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-forest-950/90 via-forest-900/40 to-transparent" />
+
+                                    {/* Content */}
+                                    <div className="absolute bottom-8 left-8 right-8 text-white">
+                                        <h3 className="text-2xl font-serif font-bold mb-2">
+                                            {item.title}
+                                        </h3>
+                                        <div className="w-12 h-[2px] bg-gold-400" />
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>

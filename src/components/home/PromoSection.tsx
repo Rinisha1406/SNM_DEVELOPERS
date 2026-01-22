@@ -22,7 +22,7 @@ const slides: SlideData[] = [
         title: "Experience Premium Living",
         description: "Crafting homes that blend luxury with comfort. Discover a lifestyle designed for your perfect future.",
         // Image: Luxury Villa / Dream Home
-        image: "https://images.unsplash.com/photo-1613490493576-2f5037657911?auto=format&fit=crop&w=800&q=80",
+        image: "/images/promo-slide-1.png",
         icon: "✨"
     },
     {
@@ -31,7 +31,7 @@ const slides: SlideData[] = [
         title: "A Legacy of Trust",
         description: "Building relationships on transparency and integrity. We are committed to keeping our promises since 1990.",
         // Image: Handshake / Trust / Deal
-        image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80",
+        image: "/images/promo-slide-2.png",
         icon: "🤝"
     },
     {
@@ -40,17 +40,10 @@ const slides: SlideData[] = [
         title: "Quality Construction",
         description: "Superior standards ensuring your investment lasts a lifetime. Excellence in every brick we lay.",
         // Image: Modern Apartment / Building
-        image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80",
+        image: "/images/promo-slide-3.png",
         icon: "🏡"
     }
 ];
-// Wait, user sent 3 images. 
-// Image 0: Exclamation? Or Abstract? The logic had "Exclamation Overlay". 
-// If the user sent an Exclamation Mark image, I should use it and REMOVE the text overlay '!'
-// Let's assume Image 0 is the exclamation mark itself.
-
-// REVISED CONTENT BELOW
-
 
 export const PromoSection: React.FC = () => {
     const [activeIndex, setActiveIndex] = useState(0);

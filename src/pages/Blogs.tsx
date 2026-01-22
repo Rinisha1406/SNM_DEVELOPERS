@@ -79,9 +79,6 @@ const POPULAR_POSTS = [
 const CATEGORIES = ["All", "Market Analysis", "Investment Guide", "Legal & NRI", "Development", "infrastructure", "Lifestyle"];
 
 // --- Components ---
-
-
-
 const BlogCard = ({ post }: { post: BlogPost }) => (
     <motion.article
         initial={{ opacity: 0, y: 20 }}
@@ -200,7 +197,7 @@ export const Blogs: React.FC = () => {
                 decorationText="Knowledge Hub"
             />
 
-            <section className="py-24">
+            <section className="pt-14 pb-16">
                 <div className="container mx-auto px-6">
                     <div className="flex flex-col lg:flex-row gap-16">
                         {/* Main Content */}
@@ -228,11 +225,11 @@ export const Blogs: React.FC = () => {
                             </div>
 
                             {/* Load More Button */}
-                            <div className="mt-12 text-center">
+                            {/* <div className="mt-12 text-center">
                                 <button className="px-8 py-3 border border-gray-200 rounded-full text-gray-600 font-semibold hover:border-gold-400 hover:text-gold-600 transition-colors">
                                     Load More Articles
                                 </button>
-                            </div>
+                            </div> */}
                         </div>
 
                         {/* Sidebar */}

@@ -4,11 +4,11 @@ import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const heroImages = [
-    'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2600&q=80', // Original
-    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2600&q=80', // Modern White
-    'https://images.unsplash.com/photo-1600596542815-4ad4dc2a7521?ixlib=rb-4.0.3&auto=format&fit=crop&w=2600&q=80', // Luxury Pool
-    'https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2600&q=80', // Driveway
-    'https://images.unsplash.com/photo-1600047509807-c17181af3abd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2600&q=80'  // Garden
+    '/images/hero-1.jpg', // Living Room
+    '/images/hero-2.jpg', // Blue Rug Lounge
+    '/images/hero-3.jpg', // Dining Area
+    '/images/hero-4.jpg', // Bedroom
+    '/images/hero-5.jpg'  // Kitchen
 ];
 
 export const Hero: React.FC = () => {

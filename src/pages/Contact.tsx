@@ -101,8 +101,7 @@ const ContactForm = () => (
 const DepartmentTable = () => (
     <div className="h-full flex flex-col justify-center">
         <h2 className="text-4xl font-serif font-bold text-forest-900 mb-6">
-            Get In Touch <br />
-            <span className="text-gold-600">With US</span>
+            Get In Touch With Us <br />
         </h2>
 
         <p className="text-gray-600 mb-10 leading-relaxed text-lg">
@@ -156,7 +155,7 @@ export const Contact: React.FC = () => {
             <PageHero
                 title="Let's Connect and Build Together"
                 subtitle="Have questions or need more details? We're here to guide you every step of the way in your property journey."
-                backgroundImage="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80"
+                backgroundImage="/images/hero-3.jpg"
                 decorationText="Get In Touch"
             />
 

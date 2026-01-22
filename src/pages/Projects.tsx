@@ -10,7 +10,7 @@ const projectsData = [
         location: 'Thanjavur',
         type: 'Residential',
         status: 'Sold Out',
-        image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
+        image: '/images/project-1.jpg',
         plotSize: '1200-2400 sq.ft',
         priceRange: '₹25-45 Lakhs',
         totalPlots: 120,
@@ -23,7 +23,7 @@ const projectsData = [
         location: 'Trichy Road',
         type: 'Villa Plots',
         status: 'Open',
-        image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80',
+        image: '/images/project-2.jpg',
         plotSize: '2400-3600 sq.ft',
         priceRange: '₹50-75 Lakhs',
         totalPlots: 80,
@@ -36,7 +36,7 @@ const projectsData = [
         location: 'Medical College Road',
         type: 'Residential',
         status: 'Open',
-        image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80',
+        image: '/images/project-3.jpg',
         plotSize: '1000-2000 sq.ft',
         priceRange: '₹20-40 Lakhs',
         totalPlots: 150,
@@ -49,7 +49,7 @@ const projectsData = [
         location: 'Kumbakonam',
         type: 'Mixed Use',
         status: 'Upcoming',
-        image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80',
+        image: '/images/project-4.jpg',
         plotSize: '1500-3000 sq.ft',
         priceRange: '₹30-60 Lakhs',
         totalPlots: 100,
@@ -62,7 +62,7 @@ const projectsData = [
         location: 'Thanjavur',
         type: 'Residential',
         status: 'Sold Out',
-        image: 'https://images.unsplash.com/photo-1600596542815-4ad4dc2a7521?auto=format&fit=crop&w=1200&q=80',
+        image: '/images/project-5.jpg',
         plotSize: '1200-2200 sq.ft',
         priceRange: '₹22-42 Lakhs',
         totalPlots: 90,
@@ -75,7 +75,7 @@ const projectsData = [
         location: 'City Centre',
         type: 'Commercial',
         status: 'Completed',
-        image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80',
+        image: '/images/project-6.jpg',
         plotSize: '800-1500 sq.ft',
         priceRange: '₹40-80 Lakhs',
         totalPlots: 60,
@@ -166,8 +166,6 @@ export const Projects: React.FC = () => {
                 backgroundImage="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=2000&q=80"
                 decorationText="Our Portfolio"
             />
-
-
 
             {/* Projects Grid */}
             <section className="py-12 bg-white">
