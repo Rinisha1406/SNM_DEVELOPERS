@@ -111,9 +111,10 @@ export const EnquireModal: React.FC<EnquireModalProps> = ({ isOpen, onClose }) =
                                         <div>
                                             <select className="w-full bg-forest-800/50 border-b border-forest-600 px-4 py-3 text-white placeholder-forest-300 focus:outline-none focus:border-gold-400 focus:bg-forest-800 transition-all rounded-t-sm appearance-none cursor-pointer">
                                                 <option value="" className="bg-forest-900">Select Project Interest*</option>
-                                                <option value="Green Valley" className="bg-forest-900">Green Valley Phase 5</option>
-                                                <option value="Highway City" className="bg-forest-900">Highway City</option>
-                                                <option value="Royal Palms" className="bg-forest-900">Royal Palms</option>
+                                                <option value="SNM GREEN City" className="bg-forest-900">SNM GREEN City</option>
+                                                <option value="Gnana Arul Mary Nagar" className="bg-forest-900">Gnana Arul Mary Nagar</option>
+                                                <option value="Afsar Nagar" className="bg-forest-900">Afsar Nagar</option>
+                                                <option value="SNM MAJESTIC Tower" className="bg-forest-900">SNM MAJESTIC Tower</option>
                                             </select>
                                         </div>
 
@@ -121,7 +122,7 @@ export const EnquireModal: React.FC<EnquireModalProps> = ({ isOpen, onClose }) =
                                         <div className="flex gap-3 items-start pt-2">
                                             <input type="checkbox" id="consent" className="mt-1 w-4 h-4 accent-gold-500 cursor-pointer" />
                                             <label htmlFor="consent" className="text-[10px] text-forest-300 leading-tight">
-                                                By submitting this form, I authorize SNM Developers Private Limited to contact me via Email, SMS, WhatsApp, or Call with updates and offers, overriding any DND/NDNC settings.
+                                                By submitting this form, I authorize SNM Developers to contact me via Email, SMS, WhatsApp, or Call with updates and offers, overriding any DND/NDNC settings.
                                             </label>
                                         </div>
 
@@ -146,7 +147,7 @@ export const EnquireModal: React.FC<EnquireModalProps> = ({ isOpen, onClose }) =
                                         <div className="bg-forest-900 text-white p-1.5 rounded-full">
                                             <Mail size={14} />
                                         </div>
-                                        support@snmdevelopers.com
+                                        snmroyalpromoters@gmail.com
                                     </div>
                                 </div>
                             </div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import {
     Plane,
     Building2,
@@ -174,9 +175,9 @@ const CulturalSection = () => (
                         Thanjavur is not just a location; it's an emotion. With rapid urban development
                         and upcoming infrastructure projects, your home town is evolving. Be part of this growth story.
                     </p>
-                    <button className="text-white border-b border-gold-500 pb-1 hover:text-gold-400 transition-colors inline-flex items-center gap-2">
+                    <Link to="/projects" className="text-white border-b border-gold-500 pb-1 hover:text-gold-400 transition-colors inline-flex items-center gap-2">
                         View Culturally Rich Projects <ArrowRight size={16} />
-                    </button>
+                    </Link>
                 </div>
                 <div className="w-full md:w-1/2">
                     <div className="grid grid-cols-2 gap-4">
@@ -317,7 +318,7 @@ const FAQItem = ({ question, answer, isOpen, toggle }: any) => (
 const FAQSection = () => {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
     const faqs = [
-        { q: "Can NRIs buy agricultural land in India?", a: "Generally, NRIs cannot buy agricultural land, plantation property, or farmhouses. However, specific RBI approvals can sometimes be sought. Residential and commercial plots (like SNM Layouts) are completely open for purchase." },
+        { q: "Can NRIs buy agricultural land in India?", a: "Generally, NRIs cannot buy agricultural land, plantation property, or farmhouses. However, specific RBI approvals can sometimes be sought. Residential and commercial plots (like SNM Developers Layouts) are completely open for purchase." },
         { q: "How do I execute the Power of Attorney (POA)?", a: "You can execute a POA in your country of residence by signing it before a notary public or Indian consulate official. It then needs to be adjudicated in India within 3 months of receipt." },
         { q: "What is the tax implication if I sell the property?", a: "Long-term capital gains (held for >2 years) are taxed at 20% with indexation benefits. TDS of roughly 20-23% is deducted at source for NRIs, which can be claimed back in returns." },
     ];

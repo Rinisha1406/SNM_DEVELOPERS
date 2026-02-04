@@ -70,14 +70,20 @@ export const Projects: React.FC = () => {
         return () => clearInterval(interval);
     }, []);
 
-    const filters = ['All', 'Residential', 'Villa Plots', 'Commercial', 'Open', 'Sold Out'];
+    const filters = ['All', 'Ongoing', 'Completed'];
 
     const filteredProjects = projectsData.filter(project => {
         if (activeFilter === 'All') return true;
-        if (activeFilter === 'Open' || activeFilter === 'Sold Out') {
-            return project.status === activeFilter;
+
+        if (activeFilter === 'Ongoing') {
+            return project.status === 'Open';
         }
-        return project.type === activeFilter;
+
+        if (activeFilter === 'Completed') {
+            return project.status === 'Sold Out';
+        }
+
+        return false;
     });
 
     return (
@@ -128,10 +134,10 @@ export const Projects: React.FC = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+                                className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col h-full"
                             >
                                 {/* Image */}
-                                <div className="relative h-64 overflow-hidden">
+                                <div className="relative h-64 overflow-hidden flex-shrink-0">
                                     <img
                                         src={project.image}
                                         alt={project.title}
@@ -142,23 +148,14 @@ export const Projects: React.FC = () => {
                                     {/* Status Badge */}
                                     <div className={`absolute top-4 right-4 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider backdrop-blur-md ${project.status === 'Open'
                                         ? 'bg-green-500/90 text-white'
-                                        : project.status === 'Sold Out'
-                                            ? 'bg-gray-900/90 text-white'
-                                            : 'bg-blue-500/90 text-white'
+                                        : 'bg-gray-900/90 text-white'
                                         }`}>
-                                        {project.status}
-                                    </div>
-
-                                    {/* Type Badge */}
-                                    <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-lg">
-                                        <span className="text-gold-600 font-bold text-sm uppercase tracking-wider">
-                                            {project.type}
-                                        </span>
+                                        {project.status === 'Open' ? 'Ongoing' : 'Completed'}
                                     </div>
                                 </div>
 
                                 {/* Content */}
-                                <div className="p-6">
+                                <div className="p-6 flex flex-col flex-grow">
                                     <h3 className="text-2xl font-serif font-bold text-gray-900 mb-2">
                                         {project.title}
                                     </h3>
@@ -167,52 +164,15 @@ export const Projects: React.FC = () => {
                                         <span className="text-sm">{project.location}</span>
                                     </div>
 
-                                    <p className="text-gray-600 text-sm mb-6 leading-relaxed">
+                                    <p className="text-gray-600 text-sm mb-6 leading-relaxed flex-grow line-clamp-4">
                                         {project.description}
                                     </p>
 
-                                    {/* Specifications Grid */}
-                                    <div className="grid grid-cols-2 gap-4 mb-6 p-4 bg-gray-50 rounded-xl">
-                                        <div className="flex items-start gap-2">
-                                            <Maximize className="text-forest-600 mt-1 flex-shrink-0" size={18} />
-                                            <div>
-                                                <div className="text-xs text-gray-500 uppercase tracking-wider">Plot Size</div>
-                                                <div className="text-sm font-bold text-gray-900">{project.plotSize}</div>
-                                            </div>
-                                        </div>
-                                        <div className="flex items-start gap-2">
-                                            <IndianRupee className="text-forest-600 mt-1 flex-shrink-0" size={18} />
-                                            <div>
-                                                <div className="text-xs text-gray-500 uppercase tracking-wider">Price Range</div>
-                                                <div className="text-sm font-bold text-gray-900">{project.priceRange}</div>
-                                            </div>
-                                        </div>
-                                        <div className="flex items-start gap-2">
-                                            <Home className="text-forest-600 mt-1 flex-shrink-0" size={18} />
-                                            <div>
-                                                <div className="text-xs text-gray-500 uppercase tracking-wider">Total Plots</div>
-                                                <div className="text-sm font-bold text-gray-900">{project.totalPlots}</div>
-                                            </div>
-                                        </div>
-                                        <div className="flex items-start gap-2">
-                                            <Trees className="text-forest-600 mt-1 flex-shrink-0" size={18} />
-                                            <div>
-                                                <div className="text-xs text-gray-500 uppercase tracking-wider">Amenities</div>
-                                                <div className="text-sm font-bold text-gray-900">{project.amenities}+</div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* CTA Button */}
                                     <button
                                         onClick={() => navigate(`/projects/${project.id}`)}
-                                        className={`w-full py-3 rounded-xl font-bold transition-all ${project.status === 'Open'
-                                            ? 'bg-forest-700 text-white hover:bg-forest-800 hover:shadow-lg'
-                                            : 'bg-gray-200 text-gray-500 cursor-not-allowed'
-                                            }`}
-                                        disabled={project.status !== 'Open'}
+                                        className="w-full py-3 rounded-xl font-bold transition-all bg-forest-700 text-white hover:bg-forest-800 hover:shadow-lg mt-auto"
                                     >
-                                        {project.status === 'Open' ? 'View Details' : project.status}
+                                        View Details
                                     </button>
                                 </div>
                             </motion.div>

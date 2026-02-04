@@ -54,7 +54,7 @@ const LeadershipSection = () => (
                 <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
                     <img
                         src="/images/brand-1.png"
-                        alt="SNM Leadership"
+                        alt="SNM Developers Leadership"
                         className="w-full h-full object-cover object-top"
                     />
                 </div>
@@ -257,7 +257,7 @@ const CultureSection = () => (
     <section className="pt-14 pb-16 bg-gray-50 relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
             <div className="text-center mb-16">
-                <span className="text-gold-600 font-bold uppercase tracking-wider text-sm">Why Choose SNM</span>
+                <span className="text-gold-600 font-bold uppercase tracking-wider text-sm">Why Choose SNM Developers</span>
                 <h2 className="text-4xl font-serif font-bold text-forest-900 mt-2">Culture & Benefits</h2>
             </div>
 
@@ -298,14 +298,14 @@ const Testimonials = () => (
 
         <div className="container mx-auto px-6">
             <div className="text-center mb-16">
-                <h2 className="text-4xl font-serif font-bold text-white">Voices of SNM</h2>
+                <h2 className="text-4xl font-serif font-bold text-white">Voices of SNM Developers</h2>
                 <div className="w-20 h-1 bg-gold-500 mx-auto mt-4 rounded-full" />
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
                 {[
                     {
-                        quote: "I joined as a fresher and today I lead a team of 10. SNM invests in your growth like no other.",
+                        quote: "I joined as a fresher and today I lead a team of 10. SNM Developers invests in your growth like no other.",
                         author: "Arunkumar M.",
                         role: "Senior Sales Manager",
                         image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80"
@@ -351,12 +351,12 @@ const Gallery = () => (
         <div className="container mx-auto px-6">
             <div className="flex flex-col md:flex-row justify-between items-end mb-12">
                 <div>
-                    <span className="text-forest-600 font-bold uppercase tracking-wider text-sm">Life at SNM</span>
+                    <span className="text-forest-600 font-bold uppercase tracking-wider text-sm">Life at SNM Developers</span>
                     <h2 className="text-4xl font-serif font-bold text-gray-900 mt-2">More Than Just a Workplace</h2>
                 </div>
-                <button className="text-forest-600 font-bold hover:text-gold-500 transition-colors flex items-center gap-2 mt-4 md:mt-0">
+                {/* <button className="text-forest-600 font-bold hover:text-gold-500 transition-colors flex items-center gap-2 mt-4 md:mt-0">
                     View Gallery <ArrowRight size={20} />
-                </button>
+                </button> */}
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 h-[500px]">
@@ -426,13 +426,13 @@ const JobCard = ({ title, dept, loc, type, featured }: any) => (
                 <span className="flex items-center gap-1"><Clock size={14} /> {type}</span>
             </div>
         </div>
-        <button className={`px-6 py-3 rounded-lg font-bold transition-colors flex items-center gap-2
+        <a href="mailto:snmroyalpromoters@gmail.com" className={`px-6 py-3 rounded-lg font-bold transition-colors flex items-center gap-2
             ${featured
                 ? 'bg-white text-forest-900 hover:bg-gray-100'
                 : 'bg-forest-50 text-forest-700 hover:bg-forest-600 hover:text-white'
             }`}>
             Apply Now <ChevronRight size={16} />
-        </button>
+        </a>
     </motion.div>
 );
 
@@ -494,8 +494,8 @@ const JobSection = () => {
                 <div className="mt-12 p-8 bg-blue-50 rounded-2xl border border-blue-100 text-center">
                     <h4 className="text-lg font-bold text-blue-900 mb-2">Did't find the perfect role?</h4>
                     <p className="text-blue-700 mb-6">We are always open to meeting extraordinary talent. Send us your resume.</p>
-                    <a href="mailto:careers@snmdevelopers.com" className="inline-flex items-center gap-2 text-blue-700 font-bold hover:underline">
-                        careers@snmdevelopers.com <ArrowRight size={16} />
+                    <a href="mailto:snmroyalpromoters@gmail.com" className="inline-flex items-center gap-2 text-blue-700 font-bold hover:underline">
+                        snmroyalpromoters@gmail.com <ArrowRight size={16} />
                     </a>
                 </div>
             </div>

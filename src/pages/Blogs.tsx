@@ -61,7 +61,7 @@ const BLOG_POSTS: BlogPost[] = [
     {
         id: 4,
         title: "Sustainable Living: How We Design Eco-Friendly Communities",
-        excerpt: "From rainwater harvesting to solar-integrated streetlights, discover the green technologies that make SNM layouts future-ready and environmentally responsible.",
+        excerpt: "From rainwater harvesting to solar-integrated streetlights, discover the green technologies that make SNM Developers layouts future-ready and environmentally responsible.",
         category: "Development",
         date: "Dec 15, 2025",
         readTime: "4 min read",

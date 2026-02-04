@@ -56,7 +56,7 @@ export const Hero: React.FC = () => {
                 >
                     <div className="flex items-center gap-3 mb-6">
                         <span className="h-0.5 w-12 bg-gold-500"></span>
-                        <span className="text-gold-400 font-medium tracking-[0.2em] uppercase text-sm">Since 1990</span>
+                        <span className="text-gold-400 font-medium tracking-[0.2em] uppercase text-sm">Since 1996</span>
                     </div>
 
                     <h1 className="text-5xl md:text-7xl font-serif font-bold leading-tight mb-8">
