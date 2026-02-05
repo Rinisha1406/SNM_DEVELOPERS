@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import promoBg from '../../assets/images/promo-bg.jpg';
 
 type SlideType = 'exclamation' | 'person' | 'house';
@@ -107,10 +108,12 @@ export const PromoSection: React.FC = () => {
                                 </p>
 
                                 <div className="pt-4">
-                                    <button className="group flex items-center gap-2 text-forest-700 font-bold uppercase tracking-wider text-sm">
-                                        Discover More
-                                        <div className="h-0.5 w-8 bg-gold-400 transition-all group-hover:w-16"></div>
-                                    </button>
+                                    <Link to="/projects">
+                                        <button className="group flex items-center gap-2 text-forest-700 font-bold uppercase tracking-wider text-sm">
+                                            Discover More
+                                            <div className="h-0.5 w-8 bg-gold-400 transition-all group-hover:w-16"></div>
+                                        </button>
+                                    </Link>
                                 </div>
                             </motion.div>
                         </AnimatePresence>

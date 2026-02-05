@@ -53,7 +53,7 @@ const NEWS_ARTICLES: NewsItem[] = [
         title: "Why Tier-2 Cities Are the New Goldmines",
         date: "Oct 05, 2025",
         source: "Economic Times",
-        excerpt: "A deep dive into how developers like SNM are transforming the landscape of Tamil Nadu's delta region.",
+        excerpt: "A deep dive into how developers like SNM Developers are transforming the landscape of Tamil Nadu's delta region.",
         image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80"
     }
 ];

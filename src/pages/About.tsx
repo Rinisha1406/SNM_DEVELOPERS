@@ -56,7 +56,7 @@ export const About: React.FC = () => {
     ];
 
     const milestones = [
-        { year: '1990', title: 'Foundation', description: 'SNM Developers established with a vision to transform real estate' },
+        { year: '1996', title: 'Foundation', description: 'SNM Developers established with a vision to transform real estate' },
         { year: '2000', title: 'Expansion', description: 'Expanded operations across Thanjavur and Trichy regions' },
         { year: '2010', title: 'Recognition', description: 'Became a trusted name with 15,000+ satisfied families' },
         { year: '2020', title: 'Innovation', description: 'Introduced modern amenities and sustainable development practices' },
@@ -64,9 +64,9 @@ export const About: React.FC = () => {
     ];
 
     const stats = [
-        { number: '34+', label: 'Years of Trust' },
+        { number: '28+', label: 'Years of Trust' },
         { number: '38+', label: 'Layouts Developed' },
-        { number: '120+', label: 'Projects Completed' },
+        { number: '17+', label: 'Projects Completed' },
         { number: '22K+', label: 'Families Served' }
     ];
 
@@ -75,7 +75,7 @@ export const About: React.FC = () => {
             name: 'Founder & Chairman',
             role: 'Visionary Leader',
             image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80',
-            description: 'Leading SNM Developers with three decades of expertise and unwavering commitment to excellence.'
+            description: 'Leading SNM Developers with nearly three decades of expertise and unwavering commitment to excellence.'
         },
         {
             name: 'Managing Director',
@@ -95,9 +95,9 @@ export const About: React.FC = () => {
         <div className="bg-white">
             <PageHero
                 title="Our Legacy of Trust"
-                subtitle="Building futures and creating wealth for over three decades. A third-generation enterprise committed to excellence."
+                subtitle="Building futures and creating wealth for nearly three decades. A third-generation enterprise committed to excellence."
                 backgroundImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80"
-                decorationText="Since 1990"
+                decorationText="Since 1996"
             />
 
             {/* About Us Section */}
@@ -117,7 +117,7 @@ export const About: React.FC = () => {
                                     className="rounded-2xl shadow-2xl w-full h-[700px] object-cover"
                                 />
                                 <div className="absolute -bottom-6 -right-6 bg-gold-500 text-forest-950 p-8 rounded-xl shadow-xl">
-                                    <div className="text-4xl font-bold">34+</div>
+                                    <div className="text-4xl font-bold">28+</div>
                                     <div className="text-sm font-medium">Years of Trust</div>
                                 </div>
                             </div>
@@ -138,15 +138,19 @@ export const About: React.FC = () => {
                             </div>
 
                             <p className="text-lg text-gray-600 leading-relaxed">
-                                SNM Developers represents a legacy of trust that began in 1990. For over three decades, we have been more than just real estate developers; we have been partners in the growth of families and communities.
+                                “SNM Developers” is one of the leading property developers in Thanjavur. We have Strong and Genuine in the real estate field from the year 1996. We have successfully crossed over 17 Projects in Thanjavur city. Thanjavur city is one of the highly farming of Rice in India. It haves high water level and Greenish atmosphere. So the peoples want to settle down in this city. The Wind mill Equipments industries also developing in Trichy Road. Our most of the projects locating in the Highways. So investing in SNM Projects is the right thing.
                             </p>
 
                             <p className="text-lg text-gray-600 leading-relaxed">
-                                As a third-generation family business, the values of honesty, transparency, and commitment instituted by our founders are the same values we uphold today. We don't just develop layouts; we create wealth and build foundations for families.
+                                The some of the appealing features that all ' SNM DEVELOPERS' ventures have are: Strategic Location, Elegant design, Convenience, Quality, Conformity with Serene Climatic Conditions, Idyllic Surroundings, and affordable rates and strict adherence to the legal aspects like, for example, clear title.
                             </p>
 
                             <p className="text-lg text-gray-600 leading-relaxed">
-                                Our most significant achievement is the wealth we've created for our customers. Land that was sold for ₹50 per sq.ft in our early days is now valued at over ₹3,500 per sq.ft - a testament to our foresight in selecting prime locations.
+                                All projects are designed precisely to meet the customers’ needs, and at times even offer more. The hallmark of the group is that it pays attention even to small details so it can present customers’ with hassle-free houses, which are hard to find in a fiercely competitive real estate market like ours.
+                            </p>
+
+                            <p className="text-lg text-gray-600 leading-relaxed">
+                                All the completed projects carry a stamp of reliability and trust. Few of the prestigious projects are SNM Nagar, SNM Royal City, SNM Farook Nagar, etc.,
                             </p>
 
                             <div className="flex gap-4 pt-4">
@@ -245,7 +249,7 @@ export const About: React.FC = () => {
             </section>
 
             {/* Leadership Team */}
-            <section className="pt-14 pb-16 bg-gradient-to-br from-forest-950 to-forest-900 text-white">
+            {/* <section className="pt-14 pb-16 bg-gradient-to-br from-forest-950 to-forest-900 text-white">
                 <div className="container mx-auto px-6">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -293,7 +297,7 @@ export const About: React.FC = () => {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* Journey Timeline */}
             <section className="pt-14 pb-16 bg-white">

@@ -14,7 +14,7 @@ export const Footer: React.FC = () => {
                             <Logo className="h-16 w-auto brightness-0 invert opacity-90" />
                         </Link>
                         <p className="text-forest-100/70 text-sm leading-relaxed">
-                            Building legacy since 1990. We craft premium living spaces that blend luxury with comfort in Thanjavur and Trichy.
+                            Building legacy since 1996. We craft premium living spaces that blend luxury with comfort in Thanjavur and Trichy.
                         </p>
                         <div className="flex gap-4">
                             {[Facebook, Instagram, Linkedin].map((Icon, i) => (
@@ -54,11 +54,11 @@ export const Footer: React.FC = () => {
                         <h4 className="text-lg font-serif font-semibold mb-6 text-gold-400">Featured Projects</h4>
                         <ul className="space-y-3 text-forest-100/70 text-sm">
                             {[
-                                { name: 'Green Valley', loc: 'Thanjavur' },
-                                { name: 'Royal Gardens', loc: 'Kumbakonam' },
-                                { name: 'Sunrise Estate', loc: 'Trichy' },
-                                { name: 'Canal View', loc: 'Thanjavur' },
-                                { name: 'Airport City', loc: 'Trichy' }
+                                { name: 'SNM GREEN City', loc: 'Thanjavur' },
+                                { name: 'Gnana Arul Mary Nagar', loc: 'Thanjavur' },
+                                { name: 'Afsar Nagar', loc: 'Thanjavur' },
+                                { name: 'SNM MAJESTIC Tower', loc: 'Thanjavur' },
+                                { name: 'Orchid Warehouse', loc: 'Thanjavur' }
                             ].map((project) => (
                                 <li key={project.name} className="flex items-start gap-2 group">
                                     <MapPin className="shrink-0 text-forest-600 mt-0.5 group-hover:text-gold-500 transition-colors" size={14} />
@@ -72,24 +72,27 @@ export const Footer: React.FC = () => {
 
                     {/* Column 4: Contact Info */}
                     <div>
-                        <h4 className="text-lg font-serif font-semibold mb-6 text-gold-400">Our Offices</h4>
+                        <h4 className="text-lg font-serif font-semibold mb-6 text-gold-400">Contact Us</h4>
                         <div className="space-y-6 text-forest-100/70 text-sm">
                             <div>
-                                <h5 className="text-white font-medium mb-1">Thanjavur (Reg. Office)</h5>
+                                <h5 className="text-white font-medium mb-1">Office Address</h5>
                                 <p className="leading-relaxed">
-                                    No. 123, Main Street,<br />near New Bus Stand, Thanjavur - 613005
+                                    # 1, SNM Nagar,<br />
+                                    Dabeer Kulam Road, East Gate,<br />
+                                    Thanjavur - 613001. India.
                                 </p>
                             </div>
                             <div>
-                                <h5 className="text-white font-medium mb-1">Trichy (Corp. Office)</h5>
+                                <h5 className="text-white font-medium mb-1">Phone</h5>
                                 <p className="leading-relaxed">
-                                    No. 45, Cantonment High Road,<br />Opp. Central Hotel, Trichy - 620001
+                                    Office: 04362 254502, 254748<br />
+                                    Mobile: 90805 67785, 99526 21786
                                 </p>
                             </div>
                             <div className="pt-2">
-                                <a href="tel:+919876543210" className="flex items-center gap-2 text-gold-400 hover:text-white transition-colors font-medium">
+                                <a href="mailto:snmroyalpromoters@gmail.com" className="flex items-center gap-2 text-gold-400 hover:text-white transition-colors font-medium">
                                     <span className="bg-forest-800 p-1.5 rounded-full"><MessageCircle size={14} /></span>
-                                    +91 98765 43210
+                                    snmroyalpromoters@gmail.com
                                 </a>
                             </div>
                         </div>
@@ -107,7 +110,7 @@ export const Footer: React.FC = () => {
 
             {/* Floating WhatsApp Button */}
             <a
-                href="https://wa.me/919876543210"
+                href="https://wa.me/919952621786"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="fixed bottom-6 right-6 z-40 bg-[#25D366] text-white p-3 rounded-full shadow-2xl hover:scale-110 transition-transform duration-300 animate-bounce-in flex items-center justify-center"

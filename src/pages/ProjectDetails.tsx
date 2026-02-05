@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
     MapPin,
     Maximize,
@@ -9,13 +9,15 @@ import {
     CheckCircle,
     ArrowLeft,
     Calendar,
-    Phone
+    Phone,
+    X
 } from 'lucide-react';
 import { projectsData } from '../data/projects';
 import { PageHero } from '../components/layout/PageHero';
 
 export const ProjectDetails: React.FC = () => {
     const { id } = useParams<{ id: string }>();
+    const [selectedImage, setSelectedImage] = useState<string | null>(null);
     const project = projectsData.find(p => p.id === Number(id));
 
     useEffect(() => {
@@ -50,141 +52,136 @@ export const ProjectDetails: React.FC = () => {
                         Back to All Projects
                     </Link>
 
-                    <div className="grid lg:grid-cols-3 gap-12">
-                        {/* Main Content */}
-                        <div className="lg:col-span-2 space-y-12">
-                            {/* Overview */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5 }}
-                            >
-                                <h2 className="text-3xl font-serif font-bold text-gray-900 mb-6">Overview</h2>
-                                <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                                    {project.description}
-                                </p>
-
-                                {/* Key Specs */}
-                                <div className="grid sm:grid-cols-2 gap-6">
-                                    <div className="bg-forest-50 p-6 rounded-xl border border-forest-100 flex items-start gap-4">
-                                        <div className="bg-white p-3 rounded-lg shadow-sm text-forest-600">
-                                            <Maximize size={24} />
-                                        </div>
-                                        <div>
-                                            <span className="block text-sm text-gray-500 uppercase tracking-wider mb-1">Plot Sizes</span>
-                                            <span className="text-xl font-bold text-gray-900">{project.plotSize}</span>
-                                        </div>
-                                    </div>
-                                    <div className="bg-forest-50 p-6 rounded-xl border border-forest-100 flex items-start gap-4">
-                                        <div className="bg-white p-3 rounded-lg shadow-sm text-forest-600">
-                                            <IndianRupee size={24} />
-                                        </div>
-                                        <div>
-                                            <span className="block text-sm text-gray-500 uppercase tracking-wider mb-1">Price Range</span>
-                                            <span className="text-xl font-bold text-gray-900">{project.priceRange}</span>
-                                        </div>
-                                    </div>
-                                    <div className="bg-forest-50 p-6 rounded-xl border border-forest-100 flex items-start gap-4">
-                                        <div className="bg-white p-3 rounded-lg shadow-sm text-forest-600">
-                                            <Trees size={24} />
-                                        </div>
-                                        <div>
-                                            <span className="block text-sm text-gray-500 uppercase tracking-wider mb-1">Amenities</span>
-                                            <span className="text-xl font-bold text-gray-900">{project.amenities}+ World Class</span>
-                                        </div>
-                                    </div>
-                                    <div className="bg-forest-50 p-6 rounded-xl border border-forest-100 flex items-start gap-4">
-                                        <div className="bg-white p-3 rounded-lg shadow-sm text-forest-600">
-                                            <MapPin size={24} />
-                                        </div>
-                                        <div>
-                                            <span className="block text-sm text-gray-500 uppercase tracking-wider mb-1">Location</span>
-                                            <span className="text-xl font-bold text-gray-900">{project.location}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </motion.div>
-
-                            {/* Features List */}
+                    {/* Main Content Container - Vertical Stack */}
+                    <div className="space-y-16">
+                        {/* Gallery Section - Full Width */}
+                        <div className="w-full">
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                             >
-                                <h3 className="text-2xl font-serif font-bold text-gray-900 mb-6">Key Features</h3>
-                                <div className="grid md:grid-cols-2 gap-4">
-                                    {project.features?.map((feature, idx) => (
-                                        <div key={idx} className="flex items-center gap-3 p-4 bg-white border border-gray-100 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                                            <CheckCircle className="text-gold-500 flex-shrink-0" size={20} />
-                                            <span className="text-gray-700 font-medium">{feature}</span>
+                                <h3 className="text-3xl font-serif font-bold text-gray-900 mb-8 flex items-center gap-3">
+                                    <span className="w-8 h-1 bg-gold-500 rounded-full"></span>
+                                    Gallery
+                                </h3>
+                                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]">
+                                    {[1, 2, 3, 4, 5, 6].map((item, index) => (
+                                        <div
+                                            key={item}
+                                            className={`group relative overflow-hidden rounded-2xl shadow-md cursor-pointer border border-gray-100 ${index === 0 ? 'col-span-2 row-span-2' : 'col-span-1 row-span-1'
+                                                }`}
+                                            onClick={() => setSelectedImage(project.image)}
+                                        >
+                                            <img
+                                                src={project.image}
+                                                alt={`${project.title} Gallery ${item}`}
+                                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                <div className="absolute bottom-4 right-4 bg-white/10 backdrop-blur-md p-2 rounded-full text-white">
+                                                    <Maximize size={20} />
+                                                </div>
+                                            </div>
                                         </div>
                                     ))}
                                 </div>
                             </motion.div>
-
-                            {/* Map Location */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                            >
-                                <h3 className="text-2xl font-serif font-bold text-gray-900 mb-6">Location Map</h3>
-                                <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200 bg-gray-100 h-[400px] relative group">
-                                    <iframe
-                                        src={project.mapEmbed}
-                                        width="100%"
-                                        height="100%"
-                                        style={{ border: 0 }}
-                                        allowFullScreen={true}
-                                        loading="lazy"
-                                        referrerPolicy="no-referrer-when-downgrade"
-                                        title="Project Location"
-                                        className="grayscale group-hover:grayscale-0 transition-all duration-500"
-                                    ></iframe>
-                                </div>
-                            </motion.div>
                         </div>
 
-                        {/* Sidebar */}
-                        <div className="lg:col-span-1">
-                            <div className="sticky top-24 space-y-8">
-                                {/* Booking Card */}
-                                <motion.div
-                                    initial={{ opacity: 0, x: 20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: 0.2 }}
-                                    className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100"
-                                >
-                                    <h3 className="text-2xl font-serif font-bold text-gray-900 mb-2">Interested?</h3>
-                                    <p className="text-gray-500 mb-6">Book a free site visit to {project.title} today.</p>
+                        {/* Contact Info - Extended Horizontal Layout */}
+                        <div className="w-full">
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden"
+                            >
+                                <div className="bg-forest-900 py-4 relative overflow-hidden">
+                                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gold-400 via-gold-200 to-gold-400"></div>
+                                    <h2 className="text-center text-xl font-serif font-bold text-white tracking-widest uppercase">
+                                        For Booking, Contact
+                                    </h2>
+                                </div>
 
-                                    <form className="space-y-4">
-                                        <div>
-                                            <input type="text" placeholder="Your Name" className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-forest-500 focus:ring-2 focus:ring-forest-200 outline-none transition-all" />
+                                <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-100">
+                                    {/* Phone */}
+                                    <div className="p-8 text-center group hover:bg-forest-50/30 transition-colors">
+                                        <div className="w-12 h-12 mx-auto bg-forest-100 rounded-full flex items-center justify-center text-forest-700 mb-4 group-hover:scale-110 transition-transform">
+                                            <Phone size={24} />
                                         </div>
-                                        <div>
-                                            <input type="tel" placeholder="Phone Number" className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-forest-500 focus:ring-2 focus:ring-forest-200 outline-none transition-all" />
+                                        <h3 className="text-lg font-bold text-gray-900 mb-3 font-serif">Phone</h3>
+                                        <div className="flex flex-col gap-1 text-gray-600 font-medium">
+                                            <a href="tel:04362254502" className="hover:text-forest-700 transition-colors text-lg">04362 254502</a>
+                                            <a href="tel:04362254748" className="hover:text-forest-700 transition-colors text-lg">04362 254748</a>
                                         </div>
-                                        <div>
-                                            <input type="email" placeholder="Email Address" className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-forest-500 focus:ring-2 focus:ring-forest-200 outline-none transition-all" />
-                                        </div>
-                                        <button className="w-full bg-forest-600 hover:bg-forest-700 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
-                                            <Calendar size={20} /> Schedule Visit
-                                        </button>
-                                    </form>
+                                    </div>
 
-                                    <div className="mt-6 pt-6 border-t border-gray-100 text-center">
-                                        <p className="text-sm text-gray-500 mb-2">Or call us directly at</p>
-                                        <a href="tel:+919876543210" className="text-xl font-bold text-forest-700 hover:text-gold-600 flex items-center justify-center gap-2">
-                                            <Phone size={20} /> +91 98765 43210
+                                    {/* Mobile */}
+                                    <div className="p-8 text-center group hover:bg-gold-50/30 transition-colors">
+                                        <div className="w-12 h-12 mx-auto bg-gold-100 rounded-full flex items-center justify-center text-gold-700 mb-4 group-hover:scale-110 transition-transform">
+                                            <Phone size={24} />
+                                        </div>
+                                        <h3 className="text-lg font-bold text-gray-900 mb-3 font-serif">Mobile</h3>
+                                        <div className="flex flex-col gap-1 text-gray-600 font-medium">
+                                            <div className="flex flex-wrap justify-center gap-x-3">
+                                                <a href="tel:+919080567785" className="hover:text-gold-700 transition-colors text-lg">90805 67785</a>
+                                                <span className="text-gray-300">|</span>
+                                                <a href="tel:+919952621786" className="hover:text-gold-700 transition-colors text-lg">99526 21786</a>
+                                            </div>
+                                            <div className="flex flex-wrap justify-center gap-x-3">
+                                                <a href="tel:+919790521786" className="hover:text-gold-700 transition-colors text-lg">97905 21786</a>
+                                                <span className="text-gray-300">|</span>
+                                                <a href="tel:+919443421786" className="hover:text-gold-700 transition-colors text-lg">94434 21786</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Email */}
+                                    <div className="p-8 text-center group hover:bg-blue-50/30 transition-colors">
+                                        <div className="w-12 h-12 mx-auto bg-blue-100 rounded-full flex items-center justify-center text-blue-700 mb-4 group-hover:scale-110 transition-transform">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>
+                                        </div>
+                                        <h3 className="text-lg font-bold text-gray-900 mb-3 font-serif">Email</h3>
+                                        <a href="mailto:snmroyalpromoters@gmail.com" className="text-gray-600 font-medium hover:text-blue-700 transition-colors text-lg block whitespace-nowrap overflow-hidden text-ellipsis px-4">
+                                            snmroyalpromoters@gmail.com
                                         </a>
                                     </div>
-                                </motion.div>
-                            </div>
+                                </div>
+                            </motion.div>
                         </div>
                     </div>
                 </div>
             </section>
+
+            {/* Lightbox Modal */}
+            <AnimatePresence>
+                {selectedImage && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/95 backdrop-blur-sm"
+                        onClick={() => setSelectedImage(null)}
+                    >
+                        <button
+                            className="absolute top-6 right-6 text-white/80 hover:text-white transition-colors"
+                            onClick={() => setSelectedImage(null)}
+                        >
+                            <X size={40} />
+                        </button>
+                        <motion.img
+                            initial={{ scale: 0.9, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.9, opacity: 0 }}
+                            src={selectedImage}
+                            alt="Gallery Preview"
+                            className="max-w-[95vw] max-h-[95vh] object-contain rounded-lg shadow-2xl"
+                            onClick={(e) => e.stopPropagation()}
+                        />
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     );
 };
