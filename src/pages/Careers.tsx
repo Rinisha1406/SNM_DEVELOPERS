@@ -1,18 +1,15 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
-    Briefcase,
     MapPin,
     Clock,
     ArrowRight,
-    Search,
     Users,
     Heart,
     Zap,
     Coffee,
     ChevronRight,
     Quote,
-    Play,
     Award,
     Target,
     Scale,

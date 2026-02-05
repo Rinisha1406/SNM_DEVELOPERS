@@ -7,16 +7,11 @@ import {
     Smartphone,
     Globe,
     TrendingUp,
-    Phone,
     ChevronDown,
-    Play,
-    Calendar,
     ArrowRight,
-    MapPin,
     Wallet,
     Landmark,
     ShieldCheck,
-    Users
 } from 'lucide-react';
 import { PageHero } from '../components/layout/PageHero';
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Calendar, ExternalLink, ArrowRight, Play, Award, FileText, Newspaper, Image as ImageIcon } from 'lucide-react';
+import { Calendar, ArrowRight, FileText, Newspaper, Image as ImageIcon } from 'lucide-react';
 import { PageHero } from '../components/layout/PageHero';
 
 // --- Types ---

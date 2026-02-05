@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Phone, Mail, CheckCircle } from 'lucide-react';
+import { X, Phone, Mail } from 'lucide-react';
 
 interface EnquireModalProps {
     isOpen: boolean;
